@@ -2,18 +2,19 @@
 <html>
 <head>
   <title>jsPDF Editor</title>
+  <meta charset="utf-8" />
 
   <style>
   * { margin: 0; padding: 0;}
   html { height: 100%; overflow: hidden;}
   body > * { position: absolute;  }
-  #editor { top: 0; bottom: 0; left: 0; right: 0; }
+  #editor { position: absolute; top: 0; bottom: 0; left: 0; right: 0; }
   #preview { top: 20px; right: 20px; width: 630px; height: 891px; background: #fff; z-index: 2;}
   </style>
 </head>
 <body>
 <div id="editor">
-// Press Ctrl-S / Command-S to render
+// Press Ctrl-Alt-S / Command-Alt-S to render
 var doc = new PDFDocument();
 
 // draw some text
@@ -52,7 +53,7 @@ doc.text('And here is some wrapped text...', 100, 300)
 </div>
   <canvas id="preview"></canvas>
 
-  <script src="http://d1n0x3qji82z53.cloudfront.net/src-min-noconflict/ace.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.1/ace.js"></script>
   <script>
     // init editor
     editor = ace.edit("editor");
@@ -62,9 +63,10 @@ doc.text('And here is some wrapped text...', 100, 300)
     editor.commands.addCommand({
       name: 'saveFile',
       bindKey: {
-        win: 'Ctrl-S',
-        mac: 'Command-S',
-        sender: 'editor|cli'},
+        win: 'Ctrl-Alt-S',
+        mac: 'Command-Alt-S',
+        sender: 'editor|cli'
+      },
         exec: function(env, args, request) {
           var code = editor.getSession().getValue();
 
