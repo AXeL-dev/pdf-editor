@@ -3,7 +3,7 @@
 > Editor to generate PDFs in browsers, plugin-free
 
 ```
-git clone git@github.com:gr2m/pdf-editor.git
+git clone https://github.com/AXeL-dev/pdf-editor.git
 cd pdf-editor
 npm install
 npm start
@@ -16,4 +16,5 @@ npm build
 # builds into /dist folder
 ```
 
-Find a demo at http://gr2m.github.io/pdf-editor/
+Find a demo at https://axel-dev.github.io/pdf-editor/
+
